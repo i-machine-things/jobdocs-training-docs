@@ -17,7 +17,7 @@ An external JobDocs plugin for creating and browsing training guides. Organises 
 ## Setup
 
 1. Clone or copy this folder alongside `JobDocs/` (sibling directory):
-   ```
+   ```text
    H:\Jobdocs\
    ├── JobDocs\
    └── jobdocs-training-docs\
@@ -45,7 +45,7 @@ An external JobDocs plugin for creating and browsing training guides. Organises 
 
 Each guide is stored as a subfolder under the configured training directory:
 
-```
+```text
 Training Guides/
 └── TG001_Onboarding/
     ├── training_meta.json   # Guide metadata
@@ -57,7 +57,7 @@ Training Guides/
 
 ## Plugin Structure
 
-```
+```text
 jobdocs-training-docs/
 ├── __init__.py
 ├── module.py          # TrainingDocsModule(BaseModule)
@@ -80,3 +80,8 @@ Changes to shared template files (`.claude/CLAUDE.md`, `.claude/S&P.md` structur
 repo before or alongside merging here.
 
 See `.claude/CLAUDE.md` for the full branching, commit, and review workflow.
+
+> **Note:** The pre-commit S&P hook (`.claude/hooks/pre_commit_sp_check.py`) is triggered
+> via Claude Code's `PreToolUse` hook, not by a standard `git commit` hook. It runs when
+> Claude Code executes a `git commit` bash command. Plain `git commit` from a terminal
+> bypasses it by design — the check is Claude-only.
