@@ -26,6 +26,55 @@
    <property name="bottomMargin">
     <number>3</number>
    </property>
+   <!-- Training Folder Configuration (persistent across both tabs) -->
+   <item>
+    <widget class="QGroupBox" name="folderConfigGroup">
+     <property name="title">
+      <string>Training Guides Folder</string>
+     </property>
+     <layout class="QHBoxLayout" name="folderConfigLayout">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>8</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>8</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="training_dir_edit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>No folder configured — click Browse to set the training guides directory...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="browse_dir_btn">
+        <property name="text">
+         <string>Browse...</string>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
    <item>
     <widget class="QTabWidget" name="training_tab_widget">
      <property name="currentIndex">
