@@ -90,7 +90,7 @@ jobs:
           CR_COMMAND: ${{ steps.setup.outputs.command }}
           PR_NUMBER: ${{ steps.setup.outputs.pr_number }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.CR_TRIGGER_PAT }}
           script: |
             const cmd = process.env.CR_COMMAND;
             const pr  = parseInt(process.env.PR_NUMBER);
