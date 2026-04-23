@@ -1,4 +1,4 @@
-"""
+r"""
 Training Docs Module - Create and Track Training Guides
 
 This module handles:
@@ -286,6 +286,9 @@ class TrainingDocsModule(BaseModule):
                 f"{len(added)} file(s) added via drag-and-drop"
             )
             self.guide_status_label.setStyleSheet("color: green;")
+            event.acceptProposedAction()
+        else:
+            event.ignore()
 
     # ==================== Guide Creation ====================
 
@@ -349,6 +352,7 @@ class TrainingDocsModule(BaseModule):
 
             self.guide_status_label.setText(f"Created: {folder_name}")
             self.guide_status_label.setStyleSheet("color: green;")
+            event.acceptProposedAction()
             self.log_message(f"Training guide created: {guide_path}")
             self.show_info("Guide Created", f"Training guide created successfully:\n{guide_path}")
             self.clear_form()
